@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "citywater"
+version = "0.1.0"
+description = "City-scale rainwater harvesting: stormwater attenuation and fleet telemetry screening"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Les' Aullian Achmad Argito" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+citywater = "citywater.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
